@@ -21,6 +21,7 @@ const Card = (props) => {
                 src={foto} // Use this sample image or upload your own via the Media Explorer
                 width="400" // Transform the image: auto-crop to square aspect_ratio
                 height="300"
+                 alt = "foto-barang"
                 
             />
                 </a>
