@@ -2,10 +2,11 @@ import Image from "next/image";
 import Card from "./components/Card";
 import supabase from "../../utils/supabase";
 
-export default async function Home() {
-  const { data : katalog, error } = await supabase.from('katalog').select('')
+export const revalidate = 30
 
-  console.log(katalog);
+export default async function Home({searchParams}) {
+  const nama = searchParams?.nama;
+  const { data : katalog, error } = await supabase.from('katalog').select('').order('id', { ascending: true });
   
   if (error) {
     console.log(error.message);
